@@ -12,8 +12,31 @@
     <div id="quiz">
       <h1>Code Quiz!</h1>
     </div>
-<!--Need a Button to click and submit the quiz-->
-<button id="submit">Submit</button>
+    <!--Need a Section for Quiz *CARD CONTAINER* "card" box that holds everything inside, like the Quiz Questions and Answer choices-->
+<div class="container">
+  <!--Question Container *Child Container* where the question text would appear-->
+  <!--add class of hide so i know the text is hidden by default-->
+  <div id="question-container" class="hide"></div>
+  <div id="question">Question</div>
+  <!-- add div and id for answer buttons to effect design in CSS-->
+  <div id="answer-buttons" class="btn-grid">
+    <button class="btn">Answer 1</button>
+    <button class="btn">Answer 2</button>
+    <button class="btn">Answer 3</button>
+    <button class="btn">Answer 4</button>
+  </div>
+
+  <!--controls section ie.. Next,Previous ect. give ID"controls" so i can design later in CSS-->
+  <div id="controls"></div>
+  <!--create buttons for Start and Next so user can start quiz and Timer and next to move on to next question before timer runs out.-->
+  <!--give buttons IDS to design later in CSS-->
+  <button id="start-btn" class="Start-btn btn">Start</button>
+  <!--add hide to class name to the next button is hidden by default-->
+  <button id="next-btn" class="next-btn btn hide">Next</button>
+  <!--Need a Button to click and submit the quiz-->
+<button id="submit-btn" class="submit-btn btn">Submit</button>
+</div>
+
 <!--Need another Div to display the results-->
 <div id="results">
   <h2>Your results</h2>
