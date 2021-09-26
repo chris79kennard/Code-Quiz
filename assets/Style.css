@@ -33,6 +33,8 @@ body {
 
 .btn {
   background-color: rgb(128, 255, 43);
+  font-weight: bolder;
+  text-shadow: 1px 2px 2px rgb(12, 54, 15);
   border: 1px solid;
   border-color: black;
   border-radius: 10px;
@@ -48,8 +50,7 @@ body {
 
 #quiz {
   color: white;
-  padding: 1 1 300 0;
-  margin: 0;
+  padding: 1 1 250 0;
   display: flex;
   text-shadow: 1px 2px 2px rgb(5, 221, 23);
 }
