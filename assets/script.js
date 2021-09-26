@@ -9,6 +9,13 @@ function startGame() {
 
   console.log("Started");
 }
+function goBack() {
+  console.log("go back one page");
+}
+
+function clearHighScore() {
+  console.log("clear high scores");
+}
 
 // need to be able to move on to next question
 function setNextQuestion() {}

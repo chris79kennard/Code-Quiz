@@ -35,13 +35,21 @@ body {
 }
 
 #enterHighScore {
-  display: block;
-}
-
-#viewHighScore {
   display: none;
 }
 
+#viewHighScore {
+  display: block;
+}
+
+#viewHighScore ul {
+  list-style-type: none;
+}
+
+#viewHighScore ul li {
+  display: inline-block;
+  margin-left: 25px;
+}
 .btn-grid {
   display: grid;
   grid-template-columns: repeat(2, auto);
