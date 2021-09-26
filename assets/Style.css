@@ -17,13 +17,29 @@ body {
   align-items: center;
 }
 
-.container {
+.card {
   width: 900px;
   max-width: 70%;
   background-color: white;
   border-radius: 10px;
   padding: 0 0 10px 2px;
   box-shadow: 0 0 10px 2px rgb(78, 160, 2);
+}
+
+#intro {
+  display: block;
+}
+
+#question {
+  display: none;
+}
+
+#enterHighScore {
+  display: none;
+}
+
+#viewHighScore {
+  display: none;
 }
 
 .btn-grid {
