@@ -58,6 +58,7 @@ body {
   position: relative;
 }
 
-#results {
+#h2-results {
   color: limegreen;
+  position: relative;
 }

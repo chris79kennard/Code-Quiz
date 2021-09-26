@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Quiz</title>
     <link rel="stylesheet" href="assets/style.css" />
-    <!--use defer src and NOT rel href so the JS data loads after the Body tag-->
-    <link defer src="assets/script.js" />
   </head>
   <body>
     <!--Need a Div to hold the quiz-->
@@ -32,7 +30,9 @@
       <div id="controls"></div>
       <!--create buttons for Start and Next so user can start quiz and Timer and next to move on to next question before timer runs out.-->
       <!--give buttons IDS to design later in CSS-->
-      <button id="start-btn" class="Start-btn btn">Start</button>
+      <button id="start-btn" class="Start-btn btn" onclick="startGame()">
+        Start
+      </button>
       <!--add hide to class name to the next button is hidden by default-->
       <button id="next-btn" class="next-btn btn hide">Next</button>
       <!--Need a Button to click and submit the quiz-->
@@ -44,4 +44,5 @@
       <h2 id="h2-results">Your results:</h2>
     </div>
   </body>
+  <script src="assets/script.js"></script>
 </html>
