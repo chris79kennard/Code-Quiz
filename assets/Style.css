@@ -27,7 +27,7 @@ body {
 }
 
 #intro {
-  display: block;
+  display: none;
 }
 
 #question {
@@ -35,7 +35,7 @@ body {
 }
 
 #enterHighScore {
-  display: none;
+  display: block;
 }
 
 #viewHighScore {

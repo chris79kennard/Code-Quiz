@@ -32,10 +32,18 @@
         <div id="question">Question:</div>
         <!-- add div and id for answer buttons to effect design in CSS-->
         <div id="answer-buttons" class="btn-grid">
-          <button class="btn">Answer 1</button>
-          <button class="btn">Answer 2</button>
-          <button class="btn">Answer 3</button>
-          <button class="btn">Answer 4</button>
+          <button class="btn" id="answer1" onclick="selectAnswer(1)">
+            Answer 1
+          </button>
+          <button class="btn" id="answer2" onclick="selectAnswer(2)">
+            Answer 2
+          </button>
+          <button class="btn" id="answer3" onclick="selectAnswer(3)">
+            Answer 3
+          </button>
+          <button class="btn" id="answer4" onclick="selectAnswer(4)">
+            Answer 4
+          </button>
         </div>
       </div>
       <!--this card is where user can enter high score initials-->
@@ -58,7 +66,7 @@
 
     <!--Need another Div to display the results-->
     <div id="results">
-      <h2 id="h2-results">Your results:</h2>
+      <!-- <h2 id="h2-results">Your results:</h2> -->
     </div>
   </body>
   <script src="assets/script.js"></script>
