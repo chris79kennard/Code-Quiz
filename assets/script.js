@@ -16,3 +16,8 @@ function setNextQuestion() {}
 function selectAnswer(choice) {
   console.log("selected answer " + choice);
 }
+
+function saveHighScore() {
+  var initials = document.getElementById("initials").value;
+  console.log("initials=" + initials);
+}

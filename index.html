@@ -47,7 +47,22 @@
         </div>
       </div>
       <!--this card is where user can enter high score initials-->
-      <div class="card-body" id="enterHighScore"></div>
+      <div class="card-body" id="enterHighScore">
+        <h3>enter your high score!</h3>
+        <p>
+          <label for="initials">Enter your initials</label>
+          <!-- This element has a CSS declaration of `cursor: text` -->
+          <input id="initials" type="text" placeholder="ck" />
+        </p>
+        <!-- <!Need a Button to click and submit the quiz-->
+        <button
+          id="submit-btn"
+          class="submit-btn btn"
+          onclick="saveHighScore()"
+        >
+          Submit
+        </button>
+      </div>
       <!--card to view users high scores-->
       <div class="card-body" id="viewHighScore"></div>
       <!--Question Container *Child Container* where the question text would appear-->
@@ -59,9 +74,7 @@
       <!--give buttons IDS to design later in CSS-->
 
       <!--add hide to class name to the next button is hidden by default-->
-      <!-- <button id="next-btn" class="next-btn btn hide">Next</button>
-      <!Need a Button to click and submit the quiz-->
-      <!-- <button id="submit-btn" class="submit-btn btn">Submit</button> -->
+      <!-- <button id="next-btn" class="next-btn btn hide">Next</button>-->
     </div>
 
     <!--Need another Div to display the results-->
