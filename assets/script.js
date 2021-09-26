@@ -5,6 +5,27 @@ const viewHighsScoreCard = document.getElementById("viewHighScore");
 
 const cards = [introCard, questionCard, enterHighScoreCard, viewHighsScoreCard];
 
+const questionBank = new Array();
+questionBank.push([
+  "How many miles did Goku run to see his Sensei?",
+  "5,000",
+  "15,000",
+  "10,000",
+  "50,000",
+]);
+questionBank.push([
+  "Who is Trunk's father?",
+  "Gohan",
+  "Vegeta",
+  "Piccolo",
+  "Goku",
+]);
+
+const correctAnswers = ["10,000", "Vegeta"];
+
+var nextQuestion = 0;
+var correctAnswer = "";
+
 function turnOffAllCards() {
   // This would work for cards currently defined.
   // for(let i = 0; i < 4; i++) {
@@ -17,28 +38,34 @@ function turnOffAllCards() {
 function startGame() {
   turnOffAllCards();
   questionCard.style.display = "block";
-  showQuestion(
-    "How many miles did Goku run to see his Sensei?",
-    "5,000",
-    "15,000",
-    "10,000",
-    "500,000"
-  );
+  showQuestion();
 }
 
-function showQuestion(
-  questionToAsk,
-  choiceOne,
-  choiceTwo,
-  choiceThree,
-  choiceFour
-) {
+function showQuestion() {
   var questionText = document.getElementById("questionText");
-  questionText.innerText = questionToAsk;
-  updateChoice(document.getElementById("answer1"), choiceOne);
-  updateChoice(document.getElementById("answer2"), choiceTwo);
-  updateChoice(document.getElementById("answer3"), choiceThree);
-  updateChoice(document.getElementById("answer4"), choiceFour);
+  questionText.innerText = questionBank[nextQuestion][0];
+  updateChoice(
+    document.getElementById("answer1"),
+    questionBank[nextQuestion][1]
+  );
+
+  updateChoice(
+    document.getElementById("answer2"),
+    questionBank[nextQuestion][2]
+  );
+
+  updateChoice(
+    document.getElementById("answer3"),
+    questionBank[nextQuestion][3]
+  );
+
+  updateChoice(
+    document.getElementById("answer4"),
+    questionBank[nextQuestion][4]
+  );
+
+  correctAnswer = correctAnswers[nextQuestion];
+  nextQuestion++;
 }
 function updateChoice(htmlElement, value) {
   htmlElement.innerText = value;
@@ -58,6 +85,8 @@ function setNextQuestion() {}
 // need to be able to select a answer
 function selectAnswer(choice) {
   console.log("selected answer " + choice);
+  console.log("correct Answer is" + correctAnswer);
+  showQuestion();
 }
 
 function saveHighScore() {
