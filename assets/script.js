@@ -21,6 +21,8 @@ questionBank.push([
   "Goku",
 ]);
 
+questionBank.push(["question", "answerA", "answerB", "answerC", "answerD"]);
+
 const correctAnswers = ["10,000", "Vegeta"];
 
 var nextQuestion = 0;
