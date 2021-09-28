@@ -4,7 +4,7 @@ const enterHighScoreCard = document.getElementById("enterHighScore");
 const viewHighsScoreCard = document.getElementById("viewHighScore");
 
 const cards = [introCard, questionCard, enterHighScoreCard, viewHighsScoreCard];
-
+var NameCard = document.querySelector(".card");
 const questionBank = new Array();
 questionBank.push([
   "How many miles did Goku run to see his Sensei?",
@@ -27,6 +27,7 @@ const correctAnswers = ["10,000", "Vegeta"];
 
 var nextQuestion = 0;
 var correctAnswer = "";
+var highScore = 0;
 
 function turnOffAllCards() {
   // This would work for cards currently defined.
@@ -41,6 +42,12 @@ function startGame() {
   turnOffAllCards();
   questionCard.style.display = "block";
   showQuestion();
+}
+function wrongAnswerMessage() {
+  console.log("sorry but that was not the correct answer");
+}
+function correctAnswerMessage() {
+  console.log("Correct! Nicely Done!");
 }
 
 function showQuestion() {
@@ -87,9 +94,21 @@ function setNextQuestion() {}
 // need to be able to select a answer
 function selectAnswer(choice) {
   console.log("selected answer " + choice);
-  console.log("correct Answer is" + correctAnswer);
+  console.log("correct Answer is " + correctAnswer);
+  var displayResults = document.createElement("p");
+  NameCard.appendChild(displayResults);
+  displayResults.innerText = "selected answer " + choice;
+  var displayAnswer = document.createElement("p");
+  NameCard.appendChild(displayAnswer);
+  displayAnswer.innerText = "correct Answer was " + correctAnswer;
   showQuestion();
 }
+// attempted but did not work
+// if (correctAnswer === correctAnswer) {
+//   questionCard.questionText.display = correctAnswerMessage();
+// } else if (correctAnswer != correctAnswer) {
+//   display = wrongAnswerMessage();
+// }
 
 function saveHighScore() {
   var initials = document.getElementById("initials").value;
