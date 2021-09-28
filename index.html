@@ -15,7 +15,10 @@
     <!--Need a Section for Quiz *CARD CONTAINER* "card" box that holds everything inside, like the Quiz Questions and Answer choices-->
     <div class="card">
       <!--card header will hold link to view high scores and active score during game -->
-      <div class="card-header"></div>
+      <div class="card-header">
+        <a onclick="viewHighsScorePage()"> View High Score</a>
+        <p>Timer:<span id="currentScore">xx</span></p>
+      </div>
       <!--card body will hold intro card-->
       <div class="card-body" id="intro">
         <h3>

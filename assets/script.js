@@ -67,7 +67,8 @@ const correctAnswers = [
 var nextQuestion = 0;
 var correctAnswer = "";
 var highScore = 0;
-var endOfGame = 1;
+var gameOver = false;
+var currentScore = 100;
 
 function viewHighsScorePage() {
   turnOffAllCards();
@@ -87,6 +88,19 @@ function startGame() {
   turnOffAllCards();
   questionCard.style.display = "block";
   showQuestion();
+  var timerInterval = setInterval(function () {
+    var currentScoreEl = document.getElementById("currentScore");
+    currentScoreEl.innerText = currentScore;
+    currentScore--;
+    console.log("currentScore " + currentScore);
+
+    if (gameOver) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      viewHighsScorePage();
+      // Calls function to create and append image
+    }
+  }, 1000);
 }
 
 function showQuestion() {
@@ -142,8 +156,8 @@ function selectAnswer(choice) {
   if (questionBank.length > nextQuestion) {
     showQuestion();
   } else {
+    gameOver = true;
     //end of game
-    viewHighsScorePage();
   }
 }
 
