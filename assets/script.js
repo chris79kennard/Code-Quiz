@@ -68,7 +68,7 @@ var nextQuestion = 0;
 var correctAnswer = "";
 var highScore = 0;
 var gameOver = false;
-var currentScore = 100;
+var currentScore = 10;
 
 function viewHighsScorePage() {
   turnOffAllCards();
@@ -98,7 +98,13 @@ function startGame() {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       viewHighsScorePage();
+
       // Calls function to create and append image
+    }
+
+    if (currentScore < 1) {
+      gameOver = true;
+      viewHighsScorePage;
     }
   }, 1000);
 }
@@ -151,6 +157,7 @@ function selectAnswer(choice) {
     displayResults.innerText = "correct";
   } else {
     displayResults.innerText = "wrong";
+    currentScore = currentScore - 10;
   }
   nextQuestion++;
   if (questionBank.length > nextQuestion) {
