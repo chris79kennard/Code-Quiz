@@ -29,39 +29,39 @@ questionBank.push([
   "Ultimate Kakarot",
 ]);
 
-// questionBank.push([
-//   "Who is Videl?",
-//   "Gohan's Wife",
-//   "Goten's Mother",
-//   "Vegeta's Wife",
-//   "Mr. Satans Great Niece",
-// ]);
+questionBank.push([
+  "Who is Videl?",
+  "Gohan's Wife",
+  "Goten's Mother",
+  "Vegeta's Wife",
+  "Mr. Satans Great Niece",
+]);
 
-// questionBank.push([
-//   "How Many dragon balls are there to collect on Earth in DBZ",
-//   "One",
-//   "Nine",
-//   "Six",
-//   "Seven",
-// ]);
+questionBank.push([
+  "How Many dragon balls are there to collect on Earth in DBZ",
+  "One",
+  "Nine",
+  "Six",
+  "Seven",
+]);
 
-// questionBank.push([
-//   "What year was Dragon Ball created? TIP - *Before DBZ and DBS*",
-//   "1994",
-//   "2001",
-//   "1979",
-//   "1984",
-// ]);
+questionBank.push([
+  "What year was Dragon Ball created? TIP - *Before DBZ and DBS*",
+  "1994",
+  "2001",
+  "1979",
+  "1984",
+]);
 
 // questionBank.push(["question", "answerA", "answerB", "answerC", "answerD"]);
 
 const correctAnswers = [
   "10,000",
   "Vegeta",
-  // "Kaioken",
-  // "Gohan's Wife",
-  // "Seven",
-  // "1984",
+  "Kaioken",
+  "Gohan's Wife",
+  "Seven",
+  "1984",
 ];
 
 var nextQuestion = 0;
@@ -102,7 +102,7 @@ function startGame() {
       // Calls function to create and append image
     }
 
-    if (currentScore < 1) {
+    if (currentScore < 0) {
       gameOver = true;
       viewHighsScorePage;
     }
@@ -143,10 +143,6 @@ function goBack() {
   console.log("go back one page");
 }
 
-function clearHighScore() {
-  console.log("clear high scores");
-}
-
 // need to be able to move on to next question
 function setNextQuestion() {}
 // need to be able to select a answer
@@ -155,6 +151,7 @@ function selectAnswer(choice) {
 
   if (choice == correctAnswer) {
     displayResults.innerText = "correct";
+    currentScore = currentScore + 10;
   } else {
     displayResults.innerText = "wrong";
     currentScore = currentScore - 10;
@@ -164,12 +161,19 @@ function selectAnswer(choice) {
     showQuestion();
   } else {
     gameOver = true;
+
     //end of game
   }
 }
 
-// function scoreBoard() {
-//   enterHighScoreCard.style.display = "block";
+function enterHighScore() {}
+
+// function clearHighScore() {
+//   currentScore = 10;
+//   startGame();
+//   gameOver = false;
+//   //**GAME DOES START OVER BUT ONLY ONCE or 2x THEN ERROR MESSAGE IN CONSOLE */
+//   // console.log("clear high scores");
 // }
 
 function saveHighScore() {
