@@ -29,45 +29,50 @@ questionBank.push([
   "Ultimate Kakarot",
 ]);
 
-questionBank.push([
-  "Who is Videl?",
-  "Gohan's Wife",
-  "Goten's Mother",
-  "Vegeta's Wife",
-  "Mr. Satans Great Niece",
-]);
+// questionBank.push([
+//   "Who is Videl?",
+//   "Gohan's Wife",
+//   "Goten's Mother",
+//   "Vegeta's Wife",
+//   "Mr. Satans Great Niece",
+// ]);
 
-questionBank.push([
-  "How Many dragon balls are there to collect on Earth in DBZ",
-  "One",
-  "Nine",
-  "Six",
-  "Seven",
-]);
+// questionBank.push([
+//   "How Many dragon balls are there to collect on Earth in DBZ",
+//   "One",
+//   "Nine",
+//   "Six",
+//   "Seven",
+// ]);
 
-questionBank.push([
-  "What year was Dragon Ball created? TIP - *Before DBZ and DBS*",
-  "1994",
-  "2001",
-  "1979",
-  "1984",
-]);
+// questionBank.push([
+//   "What year was Dragon Ball created? TIP - *Before DBZ and DBS*",
+//   "1994",
+//   "2001",
+//   "1979",
+//   "1984",
+// ]);
 
 // questionBank.push(["question", "answerA", "answerB", "answerC", "answerD"]);
 
 const correctAnswers = [
   "10,000",
   "Vegeta",
-  "Kaioken",
-  "Gohan's Wife",
-  "Seven",
-  "1984",
+  // "Kaioken",
+  // "Gohan's Wife",
+  // "Seven",
+  // "1984",
 ];
 
 var nextQuestion = 0;
 var correctAnswer = "";
 var highScore = 0;
-var endOfGame = 0;
+var endOfGame = 1;
+
+function viewHighsScorePage() {
+  turnOffAllCards();
+  viewHighsScoreCard.style.display = "block";
+}
 
 function turnOffAllCards() {
   // This would work for cards currently defined.
@@ -108,7 +113,6 @@ function showQuestion() {
   );
 
   correctAnswer = correctAnswers[nextQuestion];
-  nextQuestion++;
 }
 function updateChoice(htmlElement, value) {
   htmlElement.innerText = value;
@@ -127,21 +131,25 @@ function clearHighScore() {
 function setNextQuestion() {}
 // need to be able to select a answer
 function selectAnswer(choice) {
-  console.log("selected answer " + choice);
-  console.log("correct Answer is " + correctAnswer);
-  var displayResults = document.createElement("p");
-  NameCard.appendChild(displayResults);
-  displayResults.innerText = "selected answer " + choice;
-  var displayAnswer = document.createElement("p");
-  NameCard.appendChild(displayAnswer);
-  displayAnswer.innerText = "correct Answer was " + correctAnswer;
-  // if (!choice) {
-  //   return;
+  var displayResults = document.getElementById("questionResult");
+
+  if (choice == correctAnswer) {
+    displayResults.innerText = "correct";
+  } else {
+    displayResults.innerText = "wrong";
+  }
+  nextQuestion++;
+  if (questionBank.length > nextQuestion) {
+    showQuestion();
+  } else {
+    //end of game
+    viewHighsScorePage();
+  }
 }
 
-showQuestion();
-{
-}
+// function scoreBoard() {
+//   enterHighScoreCard.style.display = "block";
+// }
 
 function saveHighScore() {
   var initials = document.getElementById("initials").value;
