@@ -15,11 +15,9 @@
 
 ![DBZ Quiz Screen Shot](assets\images\introCard.png)
 ![DBZ Quiz Question Screen Shot](assets\images\questionCardandTimer.png)
-![DBZ Quiz User's High Score Screen Shot](screen_shot/Error.png)
+![DBZ Quiz User's High Score Screen Shot]()
 
 # links
 
 - [deployed website](https://chris79kennard.github.io/Code-Quiz/)
 - [repository](https://github.com/chris79kennard/Code-Quiz)
-
-# Dragon Ball Z - Quiz
