@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
   padding: 0;
   margin: 0;
   display: flex;
@@ -22,10 +22,18 @@ body {
   right: 150px;
   width: 300px;
   max-width: 70%;
-  background-color: white;
-  border-radius: 10px;
+  background-color: rgb(129, 191, 43);
+  border-radius: 8px;
   padding: 0 0 10px 2px;
-  box-shadow: 0 0 10px 2px rgb(78, 160, 2);
+  box-shadow: 0 0 10px 2px rgb(7, 32, 131);
+}
+
+#questionText {
+  color: rgb(7, 32, 131);
+}
+
+#question-Text {
+  color: rgb(7, 32, 131);
 }
 
 #intro {
@@ -42,6 +50,19 @@ body {
 
 #viewHighScore {
   display: none;
+  color: blue;
+}
+
+#currentScore {
+  color: red;
+}
+
+#hoverViewHighScore {
+  color: white;
+}
+
+#hoverViewHighScore:hover {
+  color: yellow;
 }
 
 #viewHighScore ul {
@@ -60,33 +81,32 @@ body {
 }
 
 .btn {
-  background-color: rgb(128, 255, 43);
+  background-color: rgb(248, 91, 26);
   font-weight: bolder;
-  text-shadow: 1px 2px 2px rgb(12, 54, 15);
+  text-shadow: 1px 2px 2px rgb(0, 0, 0);
   border: 1px solid;
   border-color: black;
   border-radius: 10px;
   padding: 5px 10px;
-  color: white;
+  color: rgb(236, 240, 26);
   outline: none;
 }
 
 .btn:hover {
-  background-color: rgb(60, 255, 151);
-  border-color: rgb(3, 8, 4);
+  background-color: rgb(7, 32, 131);
+  border-color: rgb(248, 91, 26);
 }
 
 #quiz {
-  color: white;
+  color: rgb(248, 91, 26);
   display: flex;
-  text-shadow: 1px 2px 2px rgb(5, 221, 23);
-  /* padding: 1px 1px 250px 1px; */
+  text-shadow: 1px 2px 2px rgb(7, 32, 131);
   position: relative;
   bottom: 150px;
   left: 150px;
 }
 
 #h2-results {
-  color: limegreen;
+  color: black;
   position: relative;
 }

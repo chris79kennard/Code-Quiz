@@ -98,10 +98,10 @@ function startGame() {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       viewHighsScorePage();
-
       // Calls function to create and append image
+    } else {
     }
-
+    // i dont know if this is correct i dont think it is but i worked if timer hits zero game over. view your high score pops up
     if (currentScore < 0) {
       gameOver = true;
       viewHighsScorePage;
@@ -167,14 +167,14 @@ function selectAnswer(choice) {
 }
 
 function enterHighScore() {}
-
-// function clearHighScore() {
-//   currentScore = 10;
-//   startGame();
-//   gameOver = false;
-//   //**GAME DOES START OVER BUT ONLY ONCE or 2x THEN ERROR MESSAGE IN CONSOLE */
-//   // console.log("clear high scores");
-// }
+// Again i dont think this is right but it works KINDA. one game is over and user clears high score the game will start over and so will the timer.
+function clearHighScore() {
+  currentScore = 10;
+  startGame();
+  gameOver = false;
+  //**GAME DOES START OVER BUT ONLY ONCE or 2x THEN ERROR MESSAGE IN CONSOLE */
+  // console.log("clear high scores");
+}
 
 function saveHighScore() {
   var initials = document.getElementById("initials").value;

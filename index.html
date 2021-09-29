@@ -16,12 +16,14 @@
     <div class="card">
       <!--card header will hold link to view high scores and active score during game -->
       <div class="card-header">
-        <a onclick="viewHighsScorePage()"> View High Score</a>
+        <a onclick="viewHighsScorePage()" id="hoverViewHighScore">
+          View High Score</a
+        >
         <p>Timer:<span id="currentScore">xx</span></p>
       </div>
       <!--card body will hold intro card-->
       <div class="card-body" id="intro">
-        <h3>
+        <h3 id="question-Text">
           Try to answer the following code-related questions within the time
           limit. Keep in mind that incorrect answers will penalize your
           score/time by ten seconds
