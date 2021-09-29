@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # Dragon Ball Z Quiz!
 
 # Christopher Kennard's 4th home work assignment
@@ -21,6 +22,5 @@
 
 - [deployed website](https://chris79kennard.github.io/Code-Quiz/)
 - [repository](https://github.com/chris79kennard/Code-Quiz)
-=======
+
 # Dragon Ball Z - Quiz
->>>>>>> 3719c35e89cd9e9b11d5936ccd7db516a53fb447
