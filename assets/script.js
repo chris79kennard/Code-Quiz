@@ -166,7 +166,10 @@ function selectAnswer(choice) {
   }
 }
 
-function enterHighScore() {}
+function enterHighScore() {
+  turnOffAllCards();
+  turnOnenter;
+}
 // Again i dont think this is right but it works KINDA. one game is over and user clears high score the game will start over and so will the timer.
 function clearHighScore() {
   currentScore = 10;
