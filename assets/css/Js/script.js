@@ -139,12 +139,12 @@ function updateChoice(htmlElement, value) {
   htmlElement.setAttribute("onclick", 'selectAnswer("' + value + '")');
 }
 
-function goBack() {
-  console.log("go back one page");
-}
+// function goBack() {
+//   console.log("go back one page");
+// }
 
 // need to be able to move on to next question
-function setNextQuestion() {}
+// function setNextQuestion() {}
 // need to be able to select a answer
 function selectAnswer(choice) {
   var displayResults = document.getElementById("questionResult");
@@ -166,7 +166,9 @@ function selectAnswer(choice) {
   }
 }
 
-function enterHighScore() {}
+// function enterHighScore() {
+
+// }
 // Again i dont think this is right but it works KINDA. one game is over and user clears high score the game will start over and so will the timer.
 function clearHighScore() {
   currentScore = 10;
