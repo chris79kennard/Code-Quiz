@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Dragon Ball Z Quiz!
 
 # Christopher Kennard's 4th home work assignment
