@@ -169,13 +169,14 @@ function selectAnswer(choice) {
 // function enterHighScore() {
 
 // }
-// Again i dont think this is right but it works KINDA. one game is over and user clears high score the game will start over and so will the timer.
+
 function clearHighScore() {
   currentScore = 10;
-  startGame();
+  nextQuestion = 0;
   gameOver = false;
-  //**GAME DOES START OVER BUT ONLY ONCE or 2x THEN ERROR MESSAGE IN CONSOLE */
-  // console.log("clear high scores");
+  var displayResults = document.getElementById("questionResult");
+  displayResults.innerText = "";
+  startGame();
 }
 
 function saveHighScore() {
