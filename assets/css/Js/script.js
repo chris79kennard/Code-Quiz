@@ -75,6 +75,18 @@ function viewHighScorePage(previousPage) {
   viewHighsScoreCard.style.display = "block";
   goBackButton = document.getElementById("goBackButton");
   goBackButton.setAttribute("onclick", "goBack(" + previousPage + ")");
+  var highScoreRecord = JSON.parse(localStorage.getItem("highScoreRecord"));
+  if (highScoreRecord !== null) {
+    // debugger;
+    var highScoreRecord = document.getElementById("enterInitials");
+    highScoreRecord.innerText =
+      "Not a new High Score, Try again? Hit the Go Back button!";
+    // highScoreRecord.innerText = highScoreRecord.score;
+
+    // debugger;
+    // console.log("initials = " + highScoreRecord.initials);
+    // console.log("score = " + highScoreRecord.score);
+  }
 }
 
 function turnOffAllCards() {
@@ -103,13 +115,10 @@ function startGame() {
       clearInterval(timerInterval);
       var previousHighScore; //This is the value that is stored as the high score before the game starts
       previousHighScore = 0;
-      debugger;
       var highScoreRecord = JSON.parse(localStorage.getItem("highScoreRecord"));
-      debugger;
       if (highScoreRecord !== null) {
         previousHighScore = highScoreRecord.score;
       }
-      debugger;
 
       if (previousHighScore < currentScore) {
         enterHighScore();
@@ -204,7 +213,9 @@ function startNewGame() {
   startGame();
 }
 
-function clearHighScores() {}
+function clearHighScores() {
+  localStorage.removeItem("highScoreRecord");
+}
 
 function saveHighScore() {
   var initials = document.getElementById("initials");
