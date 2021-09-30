@@ -13,9 +13,9 @@
 
 # screen shot
 
-![DBZ Quiz Screen Shot](assets\images\introCard.png)
-![DBZ Quiz Question Screen Shot](assets\images\questionCardandTimer.png)
-![DBZ Quiz User's High Score Screen Shot]()
+![DBZ Quiz Screen Shot](assets\screen_shot\intro.png)
+![DBZ Quiz Question Screen Shot](assets\screen_shot\timer.png)
+![DBZ Quiz User's High Score Screen Shot](assets\screen_shot\highscore.png)
 
 # links
 
