@@ -21,37 +21,37 @@ questionBank.push([
   "Goku",
 ]);
 
-// questionBank.push([
-//   "What was Goku's first power-up technique called in DBZ?",
-//   "Saiyan Rage",
-//   "Kaioken",
-//   "Super Saiyan",
-//   "Ultimate Kakarot",
-// ]);
+questionBank.push([
+  "What was Goku's first power-up technique called in DBZ?",
+  "Saiyan Rage",
+  "Kaioken",
+  "Super Saiyan",
+  "Ultimate Kakarot",
+]);
 
-// questionBank.push([
-//   "Who is Videl?",
-//   "Gohan's Wife",
-//   "Goten's Mother",
-//   "Vegeta's Wife",
-//   "Mr. Satans Great Niece",
-// ]);
+questionBank.push([
+  "Who is Videl?",
+  "Gohan's Wife",
+  "Goten's Mother",
+  "Vegeta's Wife",
+  "Mr. Satans Great Niece",
+]);
 
-// questionBank.push([
-//   "How Many dragon balls are there to collect on Earth in DBZ",
-//   "One",
-//   "Nine",
-//   "Six",
-//   "Seven",
-// ]);
+questionBank.push([
+  "How Many dragon balls are there to collect on Earth in DBZ",
+  "One",
+  "Nine",
+  "Six",
+  "Seven",
+]);
 
-// questionBank.push([
-//   "What year was Dragon Ball created? TIP - *Before DBZ and DBS*",
-//   "1994",
-//   "2001",
-//   "1979",
-//   "1984",
-// ]);
+questionBank.push([
+  "What year was Dragon Ball created? TIP - *Before DBZ and DBS*",
+  "1994",
+  "2001",
+  "1979",
+  "1984",
+]);
 
 // questionBank.push(["question", "answerA", "answerB", "answerC", "answerD"]);
 
