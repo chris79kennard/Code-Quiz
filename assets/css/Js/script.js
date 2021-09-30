@@ -68,7 +68,7 @@ var nextQuestion = 0;
 var correctAnswer = "";
 var highScore = 0;
 var gameOver = false;
-var currentScore = 10;
+var currentScore = 20;
 
 function viewHighScorePage(previousPage) {
   turnOffAllCards();
@@ -205,7 +205,7 @@ function enterHighScore() {
 }
 
 function startNewGame() {
-  currentScore = 10;
+  currentScore = 20;
   nextQuestion = 0;
   gameOver = false;
   var displayResults = document.getElementById("questionResult");
