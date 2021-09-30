@@ -21,37 +21,37 @@ questionBank.push([
   "Goku",
 ]);
 
-questionBank.push([
-  "What was Goku's first power-up technique called in DBZ?",
-  "Saiyan Rage",
-  "Kaioken",
-  "Super Saiyan",
-  "Ultimate Kakarot",
-]);
+// questionBank.push([
+//   "What was Goku's first power-up technique called in DBZ?",
+//   "Saiyan Rage",
+//   "Kaioken",
+//   "Super Saiyan",
+//   "Ultimate Kakarot",
+// ]);
 
-questionBank.push([
-  "Who is Videl?",
-  "Gohan's Wife",
-  "Goten's Mother",
-  "Vegeta's Wife",
-  "Mr. Satans Great Niece",
-]);
+// questionBank.push([
+//   "Who is Videl?",
+//   "Gohan's Wife",
+//   "Goten's Mother",
+//   "Vegeta's Wife",
+//   "Mr. Satans Great Niece",
+// ]);
 
-questionBank.push([
-  "How Many dragon balls are there to collect on Earth in DBZ",
-  "One",
-  "Nine",
-  "Six",
-  "Seven",
-]);
+// questionBank.push([
+//   "How Many dragon balls are there to collect on Earth in DBZ",
+//   "One",
+//   "Nine",
+//   "Six",
+//   "Seven",
+// ]);
 
-questionBank.push([
-  "What year was Dragon Ball created? TIP - *Before DBZ and DBS*",
-  "1994",
-  "2001",
-  "1979",
-  "1984",
-]);
+// questionBank.push([
+//   "What year was Dragon Ball created? TIP - *Before DBZ and DBS*",
+//   "1994",
+//   "2001",
+//   "1979",
+//   "1984",
+// ]);
 
 // questionBank.push(["question", "answerA", "answerB", "answerC", "answerD"]);
 
@@ -70,9 +70,11 @@ var highScore = 0;
 var gameOver = false;
 var currentScore = 10;
 
-function viewHighsScorePage() {
+function viewHighScorePage(previousPage) {
   turnOffAllCards();
   viewHighsScoreCard.style.display = "block";
+  goBackButton = document.getElementById("goBackButton");
+  goBackButton.setAttribute("onclick", "goBack(" + previousPage + ")");
 }
 
 function turnOffAllCards() {
@@ -87,24 +89,42 @@ function turnOffAllCards() {
 function startGame() {
   turnOffAllCards();
   questionCard.style.display = "block";
+  var tmp = document.getElementById("hoverViewHighScore");
+  tmp.setAttribute("onclick", "viewHighScorePage(1)");
   showQuestion();
   var timerInterval = setInterval(function () {
     var currentScoreEl = document.getElementById("currentScore");
     currentScoreEl.innerText = currentScore;
     currentScore--;
-    console.log("currentScore " + currentScore);
 
     if (gameOver) {
       // Stops execution of action at set interval
+
       clearInterval(timerInterval);
-      viewHighsScorePage();
+      var previousHighScore; //This is the value that is stored as the high score before the game starts
+      previousHighScore = 0;
+      debugger;
+      var highScoreRecord = JSON.parse(localStorage.getItem("highScoreRecord"));
+      debugger;
+      if (highScoreRecord !== null) {
+        previousHighScore = highScoreRecord.score;
+      }
+      debugger;
+
+      if (previousHighScore < currentScore) {
+        enterHighScore();
+      } else {
+        viewHighScorePage();
+      }
+
       // Calls function to create and append image
-    } else {
     }
+
     // i dont know if this is correct i dont think it is but i worked if timer hits zero game over. view your high score pops up
     if (currentScore < 0) {
+      clearInterval(timerInterval);
       gameOver = true;
-      viewHighsScorePage;
+      viewHighScorePage();
     }
   }, 1000);
 }
@@ -139,9 +159,10 @@ function updateChoice(htmlElement, value) {
   htmlElement.setAttribute("onclick", 'selectAnswer("' + value + '")');
 }
 
-// function goBack() {
-//   console.log("go back one page");
-// }
+function goBack(previousPage) {
+  turnOffAllCards();
+  cards[previousPage].style.display = "block";
+}
 
 // need to be able to move on to next question
 // function setNextQuestion() {}
@@ -166,11 +187,15 @@ function selectAnswer(choice) {
   }
 }
 
-// function enterHighScore() {
+function enterHighScore() {
+  turnOffAllCards();
+  enterHighScoreCard.style.display = "block";
+  document
+    .getElementById("hoverViewHighScore")
+    .setAttribute("onclick", "viewHighScorePage(2)");
+}
 
-// }
-
-function clearHighScore() {
+function startNewGame() {
   currentScore = 10;
   nextQuestion = 0;
   gameOver = false;
@@ -179,7 +204,15 @@ function clearHighScore() {
   startGame();
 }
 
+function clearHighScores() {}
+
 function saveHighScore() {
-  var initials = document.getElementById("initials").value;
-  console.log("initials=" + initials);
+  var initials = document.getElementById("initials");
+
+  var highScoreRecord = {
+    initials: initials.value,
+    score: currentScore,
+  };
+
+  localStorage.setItem("highScoreRecord", JSON.stringify(highScoreRecord));
 }
