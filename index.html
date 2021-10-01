@@ -28,7 +28,7 @@
           limit. Keep in mind that incorrect answers will penalize your
           score/time by ten seconds
         </h3>
-        <button id="start-btn" class="Start-btn btn" onclick="startGame()">
+        <button id="start-btn" class="Start-btn btn" onclick="startNewGame()">
           Start
         </button>
       </div>
@@ -71,10 +71,11 @@
       </div>
       <!--card to view users high scores-->
       <div class="card-body" id="viewHighScore">
-        <h4>High Score!</h4>
-        <ul>
-          <li id="enterInitials">initials</li>
-          <li>scores</li>
+        <h4>High Scores</h4>
+        <h5 id="noHighScores">No High Scores</h5>
+        <ul id="highScoreList">
+          <li id="highScoreInitials">initials</li>
+          <li id="highScoreValue">scores</li>
         </ul>
         <button id="goBackButton" class="btn" onclick="goBack()">
           go back
@@ -97,6 +98,6 @@
     <div id="results">
       <!-- <h2 id="h2-results">Your results:</h2> -->
     </div>
+    <script src="assets/css/Js/script.js"></script>
   </body>
-  <script src="assets/css/Js/script.js"></script>
 </html>

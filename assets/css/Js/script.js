@@ -69,23 +69,27 @@ var correctAnswer = "";
 var highScore = 0;
 var gameOver = false;
 var currentScore = 20;
+var previousPageGlobal = 0;
 
 function viewHighScorePage(previousPage) {
   turnOffAllCards();
+  previousPageGlobal = previousPage;
   viewHighsScoreCard.style.display = "block";
   goBackButton = document.getElementById("goBackButton");
   goBackButton.setAttribute("onclick", "goBack(" + previousPage + ")");
-  var highScoreRecord = JSON.parse(localStorage.getItem("highScoreRecord"));
-  if (highScoreRecord !== null) {
-    // debugger;
-    var highScoreRecord = document.getElementById("enterInitials");
-    highScoreRecord.innerText =
-      "Not a new High Score, Try again? Hit the Go Back button!";
-    // highScoreRecord.innerText = highScoreRecord.score;
-
-    // debugger;
-    // console.log("initials = " + highScoreRecord.initials);
-    // console.log("score = " + highScoreRecord.score);
+  var highScoreObject = JSON.parse(localStorage.getItem("highScoreRecord"));
+  var highScoreList = document.getElementById("highScoreList");
+  var noHighScores = document.getElementById("noHighScores");
+  if (highScoreObject !== null) {
+    highScoreList.style.display = "block";
+    noHighScores.style.display = "none";
+    var highScoreInitials = document.getElementById("highScoreInitials");
+    var highScoreValue = document.getElementById("highScoreValue");
+    highScoreInitials.innerText = highScoreObject.initials;
+    highScoreValue.innerText = highScoreObject.score;
+  } else {
+    highScoreList.style.display = "none";
+    noHighScores.style.display = "block";
   }
 }
 
@@ -106,8 +110,6 @@ function startGame() {
   showQuestion();
   var timerInterval = setInterval(function () {
     var currentScoreEl = document.getElementById("currentScore");
-    currentScoreEl.innerText = currentScore;
-    currentScore--;
 
     if (gameOver) {
       // Stops execution of action at set interval
@@ -115,15 +117,15 @@ function startGame() {
       clearInterval(timerInterval);
       var previousHighScore; //This is the value that is stored as the high score before the game starts
       previousHighScore = 0;
-      var highScoreRecord = JSON.parse(localStorage.getItem("highScoreRecord"));
-      if (highScoreRecord !== null) {
-        previousHighScore = highScoreRecord.score;
+      var highScoreObject = JSON.parse(localStorage.getItem("highScoreRecord"));
+      if (highScoreObject !== null) {
+        previousHighScore = highScoreObject.score;
       }
 
       if (previousHighScore < currentScore) {
         enterHighScore();
       } else {
-        viewHighScorePage();
+        viewHighScorePage(0);
       }
 
       // Calls function to create and append image
@@ -133,8 +135,10 @@ function startGame() {
     if (currentScore < 0) {
       clearInterval(timerInterval);
       gameOver = true;
-      viewHighScorePage();
+      viewHighScorePage(0);
     }
+    currentScore--;
+    currentScoreEl.innerText = currentScore;
   }, 1000);
 }
 
@@ -213,17 +217,19 @@ function startNewGame() {
   startGame();
 }
 
-function clearHighScores() {
+function clearHighScore() {
   localStorage.removeItem("highScoreRecord");
+  viewHighScorePage(previousPageGlobal);
 }
 
 function saveHighScore() {
   var initials = document.getElementById("initials");
-
-  var highScoreRecord = {
+  console.log(currentScore);
+  var highScoreObject = {
     initials: initials.value,
     score: currentScore,
   };
 
-  localStorage.setItem("highScoreRecord", JSON.stringify(highScoreRecord));
+  localStorage.setItem("highScoreRecord", JSON.stringify(highScoreObject));
+  viewHighScorePage(0);
 }
