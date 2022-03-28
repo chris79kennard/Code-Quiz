@@ -1,7 +1,5 @@
 # Dragon Ball Z Quiz!
 
-# Christopher Kennard's 4th home work assignment
-
 ## Task: Create a timed quiz that stores high scores so user can monitor their progress with their own personal best scores as well as their friends best scores.
 
 ## Languages / Systems used to complete this assignment
