@@ -2,6 +2,7 @@
 
 ## Task: Create a timed quiz that stores high scores so user can monitor their progress with their own personal best scores as well as their friends best scores.
 
+## This is a online game for you to test your knowlage on the Dragon Ball Z Universe! 
 ## Languages / Systems used to complete this assignment
 
 1. JavaScript
